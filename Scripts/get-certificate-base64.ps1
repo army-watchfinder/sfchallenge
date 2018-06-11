@@ -1,0 +1,1 @@
+[System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\temp\kvteam14-ldn0618-SFClusterCert-20180611.pfx"))
