@@ -25,7 +25,7 @@
     <Parameter Name="Fulfillment_TargetReplicaSetSize" DefaultValue="3" />
     <!-- OrderBook parameters -->
     <Parameter Name="OrderBook_MinReplicaSetSize" DefaultValue="3" />
-    <Parameter Name="OrderBook_PartitionCount" DefaultValue="1" />
+    <Parameter Name="OrderBook_PartitionCount" DefaultValue="6" />
     <Parameter Name="OrderBook_TargetReplicaSetSize" DefaultValue="3" />
     <!-- The following parameters are defined by the adminstrators, do not change or remove -->
     <Parameter Name="Admin_AppInsights_InstrumentationKey" DefaultValue="fe64828c-3ddf-4d9f-aaa0-a03eb27f527e" />
@@ -130,7 +130,15 @@
     <!-- Create OrderBook Service -->
     <Service Name="OrderBook">
       <StatefulService ServiceTypeName="OrderBookType" TargetReplicaSetSize="[OrderBook_TargetReplicaSetSize]" MinReplicaSetSize="[OrderBook_MinReplicaSetSize]">
-        <SingletonPartition />
+        <NamedPartition>
+          <Partition Name="GBPUSD"/>
+          <Partition Name="GBPEUR"/>
+          <Partition Name="USDGBP"/>
+          <Partition Name="USDEUR"/>
+          <Partition Name="EURGBP"/>
+          <Partition Name="EURUSD"/>         
+        </NamedPartition>
+        <!--<SingletonPartition />-->
       </StatefulService>
     </Service>
     <!-- Create Logger Service -->
