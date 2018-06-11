@@ -1,0 +1,2 @@
+ .\create-orders.ps1 -numTrades 10 -domain team14-ldn0618cluster
+.westeurope.cloudapp.azure.com:80
