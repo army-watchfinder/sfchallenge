@@ -10,6 +10,8 @@ using Microsoft.ServiceFabric.Data.Collections;
 using System;
 using System.Threading;
 using Microsoft.ServiceFabric.Data;
+using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights.ServiceFabric;
 
 namespace UserStore
 {

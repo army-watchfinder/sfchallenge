@@ -5,6 +5,8 @@
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <Platforms>x64</Platforms>
+    <ApplicationInsightsResourceId>/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourcegroups/team14-ldn0618_Main/providers/microsoft.insights/components/team14-ai</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourcegroups/team14-ldn0618_Main/providers/microsoft.insights/components/team14-ai</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,5 +37,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 </Project>

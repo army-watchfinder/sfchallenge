@@ -24,6 +24,7 @@ using System.Fabric.Description;
 using System.Net;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.ApplicationInsights.ServiceFabric;
+using Microsoft.ApplicationInsights.ServiceFabric.Module;
 
 namespace OrderBook
 {
@@ -581,9 +582,11 @@ namespace OrderBook
                                         services => services
                                             .AddSingleton<HttpClient>(new HttpClient())
                                             .AddSingleton<StatefulServiceContext>(serviceContext)
-                                            .AddSingleton<OrderBook>(this))
+                                            .AddSingleton<OrderBook>(this)
+                                            .AddSingleton<ITelemetryInitializer>((serviceProvider) => FabricTelemetryInitializerExtension.CreateFabricTelemetryInitializer(serviceContext)))
                                     .UseContentRoot(Directory.GetCurrentDirectory())
                                     .UseStartup<Startup>()
+                                    .UseApplicationInsights()
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.UseReverseProxyIntegration)
                                     .UseUrls(url)
                                     .Build();
