@@ -11,8 +11,8 @@
     <Parameter Name="Logger_TargetReplicaSetSize" DefaultValue="3" />
     <!-- MongoDB parameters -->
     <Parameter Name="MongoGuestExe_InstanceCount" DefaultValue="1" />
-    <Parameter Name="MongoConnectionString" DefaultValue="mongodb://mongo.exchange:27017" />
-    <Parameter Name="MongoEnableSSL" DefaultValue="false" />
+    <Parameter Name="MongoConnectionString" DefaultValue="mongodb://team14-ldn0618:KzHvJfi5UrU6ngmfp4P48B5oyF9M4WJO3FOemmVPfQWZTO5W7JblEDoh9cqskV3pgiqpyOZzv8DRH472U9wFLw==@team14-ldn0618.documents.azure.com:10255/?ssl=true&#38;replicaSet=globaldb" />
+    <Parameter Name="MongoEnableSSL" DefaultValue="true" />
     <!-- Gateway parameters -->
     <Parameter Name="Gateway_InstanceCount" DefaultValue="1" />
     <!-- UserStore parameters -->
