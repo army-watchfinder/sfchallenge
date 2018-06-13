@@ -1,0 +1,221 @@
+az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --resource-group team14-ldn0618_Main --vmss-name nt1vm --settings "{'workspaceId':'c2ed67d8-8863-481f-b5f8-9d0bd86ab7e2'}" --protected-settings "{'workspaceKey':'W0f6JiRK3M0gmmr4YqqsJacHUq8Vn9qKmXQ+tzi7cuodLTZXh2RB0AjGJOLeY0F+76dINLO6ltBfYAqpgPoT2w=='}"
+
+Response received:
+{
+  "id": "/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourceGroups/team14-ldn0618_Main/providers/Microsoft.Compute/virtualMachineScaleSets/nt1vm",
+  "identity": null,
+  "location": "westeurope",
+  "name": "nt1vm",
+  "overprovision": false,
+  "plan": null,
+  "platformFaultDomainCount": null,
+  "provisioningState": "Succeeded",
+  "resourceGroup": "team14-ldn0618_Main",
+  "singlePlacementGroup": true,
+  "sku": {
+    "capacity": 5,
+    "name": "Standard_E2s_v3",
+    "tier": "Standard"
+  },
+  "tags": {
+    "clusterName": "team14-ldn0618cluster",
+    "resourceType": "Service Fabric"
+  },
+  "type": "Microsoft.Compute/virtualMachineScaleSets",
+  "uniqueId": "af266b65-a125-440e-b427-c59c85f4e209",
+  "upgradePolicy": {
+    "automaticOsUpgrade": false,
+    "mode": "Automatic",
+    "rollingUpgradePolicy": null
+  },
+  "virtualMachineProfile": {
+    "diagnosticsProfile": null,
+    "evictionPolicy": null,
+    "extensionProfile": {
+      "extensions": [
+        {
+          "autoUpgradeMinorVersion": true,
+          "forceUpdateTag": null,
+          "id": null,
+          "name": "ServiceFabricNodeVmExt_vmNodeType0Name",
+          "protectedSettings": null,
+          "provisioningState": null,
+          "publisher": "Microsoft.Azure.ServiceFabric",
+          "settings": {
+            "certificate": {
+              "thumbprint": "6782D6C21F005BA4E286B111DA4CDD0BCCC496D7",
+              "x509StoreName": "My"
+            },
+            "clusterEndpoint": "https://westeurope.servicefabric.azure.com/runtime/clusters/9188f093-0e06-4de6-a333-a30aee4e7ebe",
+            "dataPath": "D:\\\\SvcFab",
+            "durabilityLevel": "Bronze",
+            "nicPrefixOverride": "10.0.0.0/24",
+            "nodeTypeRef": "nt1vm"
+          },
+          "type": "ServiceFabricNode",
+          "typeHandlerVersion": "1.0"
+        },
+        {
+          "autoUpgradeMinorVersion": true,
+          "forceUpdateTag": null,
+          "id": null,
+          "name": "VMDiagnosticsVmExt_vmNodeType0Name",
+          "protectedSettings": null,
+          "provisioningState": null,
+          "publisher": "Microsoft.Azure.Diagnostics",
+          "settings": {
+            "StorageAccount": "6mt4qtr4bvgxm3",
+            "WadCfg": {
+              "DiagnosticMonitorConfiguration": {
+                "EtwProviders": {
+                  "EtwEventSourceProviderConfiguration": [
+                    {
+                      "DefaultEvents": {
+                        "eventDestination": "ServiceFabricReliableActorEventTable"
+                      },
+                      "provider": "Microsoft-ServiceFabric-Actors",
+                      "scheduledTransferKeywordFilter": "1",
+                      "scheduledTransferPeriod": "PT5M"
+                    },
+                    {
+                      "DefaultEvents": {
+                        "eventDestination": "ServiceFabricReliableServiceEventTable"
+                      },
+                      "provider": "Microsoft-ServiceFabric-Services",
+                      "scheduledTransferPeriod": "PT5M"
+                    }
+                  ],
+                  "EtwManifestProviderConfiguration": [
+                    {
+                      "DefaultEvents": {
+                        "eventDestination": "ServiceFabricSystemEventTable"
+                      },
+                      "provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
+                      "scheduledTransferKeywordFilter": "4611686018427387904",
+                      "scheduledTransferLogLevelFilter": "Information",
+                      "scheduledTransferPeriod": "PT5M"
+                    }
+                  ]
+                },
+                "overallQuotaInMB": "50000"
+              }
+            }
+          },
+          "type": "IaaSDiagnostics",
+          "typeHandlerVersion": "1.5"
+        },
+        {
+          "autoUpgradeMinorVersion": true,
+          "forceUpdateTag": null,
+          "id": null,
+          "name": "MicrosoftMonitoringAgent",
+          "protectedSettings": null,
+          "provisioningState": null,
+          "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+          "settings": {
+            "workspaceId": "c2ed67d8-8863-481f-b5f8-9d0bd86ab7e2"
+          },
+          "type": "MicrosoftMonitoringAgent",
+          "typeHandlerVersion": "1.0"
+        }
+      ]
+    },
+    "licenseType": null,
+    "networkProfile": {
+      "healthProbe": null,
+      "networkInterfaceConfigurations": [
+        {
+          "dnsSettings": {
+            "dnsServers": []
+          },
+          "enableAcceleratedNetworking": false,
+          "enableIpForwarding": false,
+          "id": null,
+          "ipConfigurations": [
+            {
+              "applicationGatewayBackendAddressPools": null,
+              "id": null,
+              "loadBalancerBackendAddressPools": [
+                {
+                  "id": "/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourceGroups/team14-ldn0618_Main/providers/Microsoft.Network/loadBalancers/LB-team14-ldn0618cluster-nt1vm/backendAddressPools/LoadBalancerBEAddressPool",
+                  "resourceGroup": "team14-ldn0618_Main"
+                }
+              ],
+              "loadBalancerInboundNatPools": [
+                {
+                  "id": "/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourceGroups/team14-ldn0618_Main/providers/Microsoft.Network/loadBalancers/LB-team14-ldn0618cluster-nt1vm/inboundNatPools/LoadBalancerBEAddressNatPool",
+                  "resourceGroup": "team14-ldn0618_Main"
+                }
+              ],
+              "name": "NIC-0",
+              "primary": null,
+              "privateIpAddressVersion": "IPv4",
+              "publicIpAddressConfiguration": null,
+              "subnet": {
+                "id": "/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourceGroups/team14-ldn0618_Main/providers/Microsoft.Network/virtualNetworks/VNet/subnets/Subnet-0",
+                "resourceGroup": "team14-ldn0618_Main"
+              }
+            }
+          ],
+          "name": "NIC-0",
+          "networkSecurityGroup": null,
+          "primary": true
+        }
+      ]
+    },
+    "osProfile": {
+      "adminPassword": null,
+      "adminUsername": "azureuser",
+      "computerNamePrefix": "nt1vm",
+      "customData": null,
+      "linuxConfiguration": null,
+      "secrets": [
+        {
+          "sourceVault": {
+            "id": "/subscriptions/f829ab1d-4bd1-4db4-9475-0ca84e400deb/resourceGroups/team14-ldn0618_Extra/providers/Microsoft.KeyVault/vaults/kvteam14-ldn0618"
+          },
+          "vaultCertificates": [
+            {
+              "certificateStore": "My",
+              "certificateUrl": "https://kvteam14-ldn0618.vault.azure.net:443/secrets/SFClusterCert/4220df79e218432fb21676e729e6c52c"
+            }
+          ]
+        }
+      ],
+      "windowsConfiguration": {
+        "additionalUnattendContent": null,
+        "enableAutomaticUpdates": true,
+        "provisionVmAgent": true,
+        "timeZone": null,
+        "winRm": null
+      }
+    },
+    "priority": null,
+    "storageProfile": {
+      "dataDisks": null,
+      "imageReference": {
+        "id": null,
+        "offer": "WindowsServerSemiAnnual",
+        "publisher": "MicrosoftWindowsServer",
+        "sku": "Datacenter-Core-1709-with-Containers-smalldisk",
+        "version": "latest"
+      },
+      "osDisk": {
+        "caching": "ReadOnly",
+        "createOption": "FromImage",
+        "image": null,
+        "managedDisk": {
+          "storageAccountType": "Standard_LRS"
+        },
+        "name": null,
+        "osType": null,
+        "vhdContainers": null,
+        "writeAcceleratorEnabled": null
+      }
+    }
+  },
+  "zoneBalance": null,
+  "zones": null
+}
+
+Double-check it's been added: az vmss extension list --resource-group team14-ldn0618_Main --vmss-name nt1vm

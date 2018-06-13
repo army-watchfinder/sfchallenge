@@ -1,0 +1,1 @@
+.\create-orders.ps1 -numTrades 10 -useAllCurrencies $True -isSingleton $False -domain [fqdn]:80

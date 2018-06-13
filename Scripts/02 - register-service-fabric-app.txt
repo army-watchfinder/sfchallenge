@@ -1,0 +1,7 @@
+Register-ServiceFabricApplicationType -ApplicationPackageDownloadUri "https://sfchallenge.blob.c
+ore.windows.net/builds/exchange.sfpkg" -ApplicationTypeName ExchangeType -ApplicationTypeVersion 1.0.0 -Async
+
+As this fell over, we downloaded the source code and published it manually.
+1) Set up ApplicationManifest.xml with team name and endpoint
+2) Right click project -> Publish (using upgrade method)
+3) Set up CI/CD pipeline

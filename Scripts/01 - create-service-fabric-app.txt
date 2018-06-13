@@ -1,0 +1,5 @@
+Downloaded certificate from key store in Azure Portal 
+
+New-ServiceFabricApplication -ApplicationName fabric:/Exchange -ApplicationTypeName ExchangeType
+ -ApplicationTypeVersion 1.0.0 -ApplicationParameter @{TeamName='Team14';Admin_AppInsights_InstrumentationKey='fe64828c-
+3ddf-4d9f-aaa0-a03eb27f527e'}
